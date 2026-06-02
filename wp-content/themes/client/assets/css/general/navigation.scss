@@ -1,0 +1,237 @@
+@use "../general/variables" as *;
+body {
+  background-color: var(--background-color);
+  overflow-x: hidden;
+}
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1rem 4rem;
+  background-color: var(--deco-elemnts);
+  font-family: var(--font-title);
+
+  @media (max-width: 991px) {
+    padding: 1rem 2rem;
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 767px) {
+    flex-wrap: wrap;
+    padding: 1rem;
+    justify-content: space-between;
+  }
+
+  &__logo-plai{
+    width: 6rem;
+  }
+
+  &__title.sro {
+    position: absolute;
+    width: 0.0625rem;
+    height: 0.0625rem;
+    padding: 0;
+    margin: -0.0625rem;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  &__svg {
+    display: block;
+    width: 15rem;
+    height: auto;
+    flex: 0 0 auto;
+
+    @media (max-width: 991px) {
+      width: 12rem;
+    }
+
+    @media (max-width: 767px) {
+      width: 10.5rem;
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    flex: 1 1 auto;
+
+
+    @include max($desktop) {
+      display: none;
+    }
+
+    &--open {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: var(--deco-elemnts);
+      z-index: 1;
+      animation: slideIn 300ms ease-in-out;
+
+      @keyframes slideIn {
+        from {
+          transform: translateX(100%);
+        }
+        to {
+          transform: translateX(0);
+        }
+      }
+    }
+
+    &--close {
+      animation: slideOut 300ms ease-in-out;
+
+      @keyframes slideOut {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(100%);
+        }
+      }
+
+    }
+  }
+
+  &__list-item {
+    margin-bottom: 1rem;
+    list-style: none;
+  }
+
+  &__link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    color: var(--text-color);
+    font-family: var(--font-text);
+    font-size: 1.15rem;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    transition: color 0.25s ease;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--elemnt-title-color);
+    }
+
+    &.current-menu-item,
+    &[aria-current='page'] {
+      font-weight: 700;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--elemnt-title-color);
+      transition: transform 0.25s ease-out;
+
+    }
+
+
+    &:hover::after,
+    &:focus-visible {
+      transform: scaleX(1);
+      opacity: 0.75;
+    }
+
+    & ::after {
+      transform-origin: bottom right;
+    }
+
+    &:hover, &::after {
+      transform-origin: bottom left;
+    }
+  }
+
+  // mon menu brg
+  .hamburger-menu {
+    display: none;
+
+    @include max($desktop){
+      display: flex;
+    }
+
+    width: 32px;
+    height: 32px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    z-index: 10;
+
+    &__line {
+      height: 3px;
+      background-color: var(--elemnt-title-color);
+      width: 100%;
+      display: block;
+      transition: all 300ms ease-in-out;
+      border-radius: 10px;
+
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      background-color: var(--elemnt-title-color);
+      left: 0;
+      transition: all 300ms ease-in-out;
+      border-radius: 10px;
+
+    }
+
+    &::before {
+      top: 5px;
+    }
+
+    &::after {
+      bottom: 5px;
+    }
+
+    &--active {
+      &::after {
+        transform: rotate(-320deg);
+        bottom: 13px;
+      }
+
+      &::before {
+        transform: rotate(320deg);
+        top: 15px;
+      }
+
+      .hamburger-menu__line {
+        opacity: 0;
+        width: 0;
+      }
+    }
+  }
+
+
+}
+
