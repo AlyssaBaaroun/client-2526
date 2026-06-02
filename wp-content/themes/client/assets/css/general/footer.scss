@@ -1,0 +1,229 @@
+@use "../general/variables" as *;
+
+.footer {
+  font-family: var(--font-title);
+  padding: 5rem 0 0;
+  position: relative;
+
+
+  @media (max-width: 767px) {
+    padding: 3rem 0 0;
+  }
+
+  &__container {
+    // width: min(100%, 86rem);
+    // margin: 0 auto;
+    // padding: 0 2rem;
+
+    @media (max-width: 767px) {
+      //      padding: 0 1rem;
+    }
+  }
+
+  &__top {
+    position: relative;
+    display: grid;
+    grid-template-rows: 1fr;
+    // grid-column-gap: 138px;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    padding: 3.938rem 1.5rem 2.188rem 5.5rem;
+    background-color: var(--deco-elemnts);
+    color: var(--text-color);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+
+    @media (max-width: 1100px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem 2rem;
+    }
+
+    @media (max-width: 767px) {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding: 3.938rem 1.5rem 2rem;
+      margin-top: 4.375rem;
+    }
+  }
+
+  &__logo-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &__logo {
+    display: inline-block;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+  }
+
+  &__plaiFooter {
+    width: 6rem;
+
+    @include between($tablet, $desktop) {
+      width: 16rem;
+    }
+
+    @include min( $desktop) {
+      width: 26rem;
+    }
+  }
+
+  &__nav,
+  &__infos,
+  &__utils {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  &__title {
+    margin: 0;
+    color: var(--title-color);
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+
+    @media (max-width: 767px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item + &__item {
+    margin-top: 0.9rem;
+  }
+
+  &__link,
+  &__legal-link {
+    display: inline-block;
+    position: relative;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.5;
+    //transition: transform 0.25s ease-out;
+
+
+
+    @media (max-width: 767px) {
+      font-size: 1.05rem;
+    }
+  }
+
+
+  &__text {
+    margin: 0;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.5;
+
+    @media (max-width: 767px) {
+      font-size: 1.05rem;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.25rem 1.5rem 0.938rem;
+    background: var(--background-color);
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.313rem;
+    }
+  }
+
+  &__legal {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    flex-wrap: wrap;
+
+  }
+
+  &__legal-item {
+    margin: 0;
+  }
+
+  &__legal-link {
+    font-size: 0.875rem;
+    font-weight: bold;
+    color: var(--text-color);
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--text-color);
+      transition: transform 0.25s ease-out;
+
+    }
+
+
+    &:hover::after,
+    &:focus-visible {
+      transform: scaleX(1);
+      opacity: 0.75;
+    }
+
+    & ::after {
+      transform-origin: bottom right;
+    }
+
+    &:hover, &::after {
+      transform-origin: bottom left;
+    }
+
+  }
+
+  &__copyright {
+    margin: 0;
+    color: var(--text-color);
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: right;
+
+    strong {
+      font-weight: 700;
+    }
+
+    @media (max-width: 767px) {
+      text-align: left;
+      font-size: 0.875rem;
+      font-weight: bold;
+    }
+  }
+
+  &__svg-loop {
+    position: absolute;
+    right: -6rem;
+    top: 50%;
+    z-index: 1;
+    pointer-events: none;
+
+  }
+}
