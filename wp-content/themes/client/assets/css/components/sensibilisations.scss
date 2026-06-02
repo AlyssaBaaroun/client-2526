@@ -1,0 +1,212 @@
+@use "../general/variables" as *;
+
+
+.sensibilisation, .suivies, .nonSuivies {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+
+  @include min($tablet) {
+    gap: 2rem;
+    padding: 2.5rem 6.563rem;
+  }
+
+
+
+  &__title {
+    font-family: var(--font-title);
+    color: var(--font-text-ev);
+    font-size: 1.5rem;
+    line-height: 1.875rem;
+    text-transform: uppercase;
+
+    @include min($desktop) {
+      font-size: 2.5rem;
+      line-height: 2rem;
+    }
+  }
+
+  &__desc {
+    font-family: var(--font-text);
+    color: var(--text-color);
+    line-height: 1.5rem;
+
+    @include min($tablet) {
+      font-size: 1.25rem;
+      line-height: 1.875rem;
+    }
+  }
+
+
+  &__subTitle {
+    font-family: var(--font-title);
+    color: var(--text-color);
+    font-size: 1.25rem;
+    text-transform: uppercase;
+
+    @include min($tablet) {
+      font-size: 2rem;
+      line-height: 1.875rem;
+    }
+  }
+
+
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: var(--background-color);
+  padding: 25px;
+  border: solid var(--cards-sensi);
+  border-radius: 10px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: var(--cards-sensi);
+    rotate: 4deg;
+    border-radius: 10px;
+    z-index: -1;
+    inset: 0; // meme taille que ma section
+  }
+
+  &--off {
+    position: relative;
+    background-color: var(--background-color);
+    padding: 25px;
+    border: solid var(--off-card);
+    opacity: 0.5;
+    cursor: not-allowed;
+
+
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: var(--off-card);
+      rotate: 4deg;
+      border-radius: 10px;
+      z-index: -1;
+      inset: 0; // meme taille que ma section
+      opacity: 0.5;
+
+    }
+  }
+
+  &__cardsText {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 1.25rem;
+    font-size: 1.125rem;
+    font-family: var(--font-text-ev);
+
+    @include min($tablet) {
+      font-size: 1.5rem;
+      line-height: 1.875rem;
+    }
+
+
+  }
+
+  &__cardsLink {
+    font-size: 0.875rem;
+    font-family: var(--font-text);
+    color: var(--text-color);
+    align-items: center;
+    gap: 1rem;
+    display: flex;
+
+    @include min($tablet) {
+      font-size: 1rem;
+    }
+
+    &::after {
+      content: "";
+      background-image: url("/wp-content/themes/client/assets/icons/flechelink.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      transition: transform .3s ease-in-out;
+      width: 2rem;
+      height: 2rem;
+      display: inline-flex;
+
+    }
+
+    &:hover::after {
+      transform: translateX(4px);
+    }
+
+    &--disabled {
+      font-size: 0.875rem;
+      font-family: var(--font-text);
+      color: var(--off-card-text);
+      cursor: not-allowed;
+
+    }
+
+  }
+
+  &__badge {
+    font-size: 0.938rem;
+    font-family: var(--font-text-ev);
+    background-color: var(--cards-sensi);
+    padding: 10px;
+    color: var(--background-color);
+    align-self: flex-end;
+    border-radius: 5px;
+  }
+
+}
+
+.sensibilisation {
+  @include min($desktop) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 100px;
+
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 1.875rem;
+  }
+
+  &__title {
+    font-size: 2rem;
+  }
+}
+
+.suivies, .nonSuivies {
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem 2rem;
+
+    @include min($desktop) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+.more{
+  @include min($tablet) {
+    padding: 2.5rem 6.563rem;
+  }
+
+  strong {
+    font-size: 1.5rem;
+    color: var(--elemnt-title-color);
+
+    @include min($tablet) {
+      font-size: 1.5rem;
+    }
+  }
+}
