@@ -1,0 +1,30 @@
+/*Import de mes polices et des font-weight*/
+:root{
+  --font-title: 'Poppins-bold', 'Helvetica', 'Arial', 'sans-serif';
+  --font-text: 'Poppins-reg', 'Helvetica', 'Arial', 'sans-serif';
+  --font-text-ev: 'Poppins-semi-bold', 'Helvetica', 'Arial', 'sans-serif';
+  --font-falc:  'Arial', 'Helvetica', 'sans-serif';
+}
+
+@font-face {
+  font-family: "Poppins-bold";
+  src: url("../../fonts/Poppins-Bold.woff2") format('woff2');
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Poppins-semi-bold";
+  src: url("../../fonts/Poppins-SemiBold.woff2") format('woff2');
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Poppins-reg";
+  src: url("../../fonts/Poppins-Regular.woff2") format('woff2');
+  font-style: normal;
+  font-weight: 400;
+}
+
+
