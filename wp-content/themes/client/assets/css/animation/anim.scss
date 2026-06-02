@@ -1,0 +1,174 @@
+@use "../general/variables" as *;
+
+.hidden {
+  opacity: 0;
+  transform: translateY(1rem);
+  //translate: 0 2rem;
+  //transition: 600ms ease-in;
+}
+
+.showup {
+  animation: show 800ms forwards;
+}
+
+@keyframes show {
+  from{
+    opacity: 0;
+    transform: translateY(4rem);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+    transition: 800ms ease-in;
+  }
+}
+
+
+.fadeInLeft {
+  animation: fadeInLeft 1s ease-out ;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.backGroundPinkStageSchool {
+  position: relative;
+  background-color: var(--deco-elemnts);
+
+  &::after {
+    position: absolute;
+    content: "";
+    background-image: url("/wp-content/themes/client/assets/icons/backgroundPink.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 5rem;
+    z-index: -1;
+    bottom: -3rem;
+    width: 100%;
+
+    @include between($tablet, $desktop) {
+      height: 10rem;
+      z-index: -1;
+      bottom: -3rem;
+    }
+
+    @include min($desktop) {
+      background-image: url("/wp-content/themes/client/assets/icons/backgroundPinkDesktop.svg");
+      height: 18rem;
+      bottom: -4rem;
+    }
+
+  }
+}
+
+.backGroundPink {
+  position: relative;
+  background-color: var(--deco-elemnts);
+
+  &::after {
+    position: absolute;
+    content: "";
+    background-image: url("/wp-content/themes/client/assets/icons/backgroundPink.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 6rem;
+    z-index: -1;
+    bottom: -6rem;
+    width: 100%;
+    color: var(--deco-elemnts);
+
+    @include between($tablet, $desktop) {
+      height: 11rem;
+      bottom: -5rem;
+    }
+    @include min($desktop) {
+      background-image: url("/wp-content/themes/client/assets/icons/backgroundPinkDesktop.svg");
+      height: 18rem;
+      bottom: -4rem;
+    }
+  }
+}
+
+.backGroundPinkFooter {
+  position: relative;
+  background-color: var(--deco-elemnts);
+
+  &::before {
+    position: absolute;
+    content: "";
+    background-image: url("/wp-content/themes/client/assets/icons/topFooter.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 4rem;
+    z-index: -1;
+    top: -4rem;
+    width: 100%;
+
+    @include between($tablet, $desktop) {
+      height: 7rem;
+      z-index: -1;
+      bottom: -4rem;
+    }
+
+    @include min($desktop) {
+      height: 24rem;
+      z-index: -1;
+      bottom: -2rem;
+    }
+
+  }
+}
+
+.backGroundPinkStageInterventions {
+  position: relative;
+  background-color: var(--deco-elemnts);
+
+  &::after {
+    position: absolute;
+    content: "";
+    background-image: url("/wp-content/themes/client/assets/icons/backgroundPink.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 4rem;
+    z-index: -1;
+    bottom: -1rem;
+    width: 100%;
+
+    @include min($desktop) {
+      background-image: url("/wp-content/themes/client/assets/icons/backgroundPinkDesktop.svg");
+      height: 24rem;
+      z-index: -1;
+      bottom: -2rem;
+    }
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    background-image: url("/wp-content/themes/client/assets/icons/backgroundPink.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 5rem;
+    z-index: -1;
+    top: -3rem;
+    width: 100%;
+    transform: scale(-1);
+
+    @include min($desktop) {
+      background-image: url("/wp-content/themes/client/assets/icons/backgroundPinkDesktop.svg");
+      height: 19rem;
+      z-index: -1;
+      top: -6rem;
+    }
+
+  }
+}
