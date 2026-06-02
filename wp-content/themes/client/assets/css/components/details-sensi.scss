@@ -1,0 +1,67 @@
+@use "../general/variables" as *;
+
+.singleSensi, .explains, .signes, .remember, .adjustments {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 1.875rem;
+  }
+
+  &__title {
+    font-family: var(--font-title), serif;
+    color: var(--title-color);
+    font-size: 2rem;
+    line-height: 1.875rem;
+    text-transform: uppercase;
+  }
+
+  &__text, &__desc {
+    font-family: var(--font-text);
+    color: var(--text-color);
+    line-height: 1.5rem;
+  }
+}
+
+.singleSensi{
+  &__title{
+    padding-bottom: 1rem;
+  }
+}
+
+.signes, .adjustments {
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+&__text{
+  font-family: var(--font-text-ev);
+}
+  &__item {
+    padding: 25px;
+    border: solid var(--elemnt-title-color);
+    border-radius: 10px;
+
+    &--other{
+      background-color: var(--adjustments-card);
+      padding: 25px;
+      border-radius: 10px;
+    }
+  }
+
+  &__text {
+    text-align: center;
+  }
+
+
+}
+
