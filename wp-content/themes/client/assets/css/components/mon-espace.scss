@@ -1,0 +1,379 @@
+@use "../general/variables" as *;
+
+.referent, .fonctionnement, .team, .timeline, .interventions, .par {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+
+  @include min($tablet) {
+    padding: 2.5rem 6.563rem;
+  }
+
+  &__title {
+    font-family: var(--font-title);
+    color: var(--font-text-ev);
+    font-size: 2rem;
+    line-height: 1.875rem;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+
+  }
+
+  &__text {
+    font-family: var(--font-text);
+    color: var(--text-color);
+    line-height: 1.5rem;
+
+    @include min($tablet) {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+.referent {
+
+  @include min($desktop) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 100px;
+  }
+
+}
+
+.fonctionnement {
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    text-align: center;
+    list-style: none;
+
+    @include min($tablet) {
+      flex-direction: row;
+      align-items: center;
+      gap: 100px;
+      text-align: left;
+    }
+
+  }
+
+
+  &__text {
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 5rem;
+      height: 5rem;
+      background-image: url("/wp-content/themes/client/assets/icons/fleche.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      margin: 1rem auto;
+
+
+      @include min($tablet) {
+        position: absolute;
+        right: -4.5rem;
+        transform: rotate(-90deg);
+        bottom: 0;
+        width: 3rem;
+        height: 3rem;
+      }
+    }
+  }
+
+
+  &__text:last-child::after {
+    display: none;
+  }
+}
+
+.team {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+
+    @include min($tablet) {
+      max-width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 1fr;
+      gap: 80px;
+    }
+  }
+
+  &__text {
+    font-family: var(--font-text-ev);
+    background-color: var(--cards-back);
+    padding: 2.875rem;
+    position: relative;
+    border-radius: 10px;
+    text-align: center;
+
+    @include min($tablet) {
+      font-size: 1.25rem;
+      padding: 4.9rem;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: var(--double-card);
+      transform: translate(-10px, -10px);
+      border-radius: 10px;
+      z-index: -1;
+      inset: 0; // meme taille que ma section
+    }
+  }
+}
+
+.timeline {
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 1.5rem 0 1.5rem 1.875rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0.625rem;
+      height: 100%;
+      background-color: var(--cards-back);
+      border-radius: 10px;
+    }
+
+    @include min($desktop) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      grid-column-gap: 50px;
+      grid-row-gap: 50px;
+      padding: 0;
+
+      &::before {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  &__text {
+    z-index: 2;
+    position: relative;
+    padding: 1rem;
+    border: solid 5px var(--double-card);
+    border-radius: 10px;
+  }
+
+  &__item {
+    position: relative;
+    transition: all .3s ease-in;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 2rem;
+      height: 2rem;
+      background-color: var(--elemnt-title-color);
+      border-radius: 50%;
+      top: 1rem;
+      left: -2.6rem;
+    }
+
+    dt:first-of-type {
+      font-family: var(--font-title);
+      color: var(--elemnt-title-color);
+      font-size: 20px;
+    }
+
+    @include min($desktop) {
+      &:nth-child(1) {
+        grid-area: 1 / 1 / 2 / 2;
+
+        &::before {
+          left: auto;
+          right: -2.6rem;
+        }
+      }
+      /* gauche */
+      &:nth-child(2) {
+        grid-area: 2 / 2 / 3 / 3;
+
+        &::before {
+          left: -2.6rem;
+        }
+      }
+      /* droite */
+      &:nth-child(3) {
+        grid-area: 3 / 1 / 4 / 2;
+
+        &::before {
+          left: auto;
+          right: -2.6rem;
+        }
+      }
+      /* gauche */
+      &:nth-child(4) {
+        grid-area: 4 / 2 / 5 / 3;
+
+        &::before {
+          left: -2.6rem;
+        }
+      }
+      /* droite */
+      &:nth-child(5) {
+        grid-area: 5 / 1 / 6 / 2;
+
+        &::before {
+          right: -2.6rem;
+          left: auto;
+        }
+      }
+    }
+  }
+}
+
+.interventions {
+  margin-top: 40px;
+  background-color: var(--deco-elemnts);
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+    @include min($desktop) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 50px;
+    }
+
+  }
+
+  &__item-title {
+    font-family: var(--font-title);
+    color: var(--elemnt-title-color);
+  }
+
+  &__item-desc {
+    display: block;
+  }
+
+}
+
+.backGroundPinkStageInterventions {
+  position: relative;
+  background-color: var(--deco-elemnts);
+
+  &::after {
+    position: absolute;
+    content: "";
+    background-image: url("/wp-content/themes/client/assets/icons/backgroundPink.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 4rem;
+    z-index: -1;
+    bottom: -1rem;
+    width: 100%;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    background-image: url("/wp-content/themes/client/assets/icons/backgroundPink.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 5rem;
+    z-index: -1;
+    top: -3rem;
+    width: 100%;
+    transform: scale(-1);
+
+  }
+}
+
+.par {
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: var(--cards-back);
+    padding: 15px 12px;
+    border-radius: 10px;
+  }
+
+  .background-double {
+    background-color: var(--double-card);
+    border-radius: 10px;
+    z-index: -1;
+    padding: 10px 10px 25px;
+  }
+
+  &__sub-title {
+    font-family: var(--font-title);
+
+    @include min($tablet) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__text, &__desc {
+    @include min($tablet) {
+      font-size: 1.25rem;
+    }
+  }
+
+  &__desc {
+    font-family: var(--font-text-ev);
+    font-size: 13px;
+    line-height: 20px;
+    padding: 15px 12px;
+    text-align: center;
+
+    @include min($tablet) {
+      font-size: 1.25rem;
+      line-height: 24px;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 1.875rem;
+    // padding-bottom: 20px;
+
+    @include min($tablet) {
+      font-size: 1.25rem;
+      line-height: 24px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    @include min($desktop) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 100px;
+    }
+  }
+}
+
