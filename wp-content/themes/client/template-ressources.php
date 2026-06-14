@@ -10,12 +10,12 @@ $image = get_field('img_intro');
 ?>
     <div class="backGroundPinkStageSchool">
 
-        <section class="intro" data-showup="true">
+        <section class="intro" data-showup="true" itemscope itemtype="https://schema.org/LearningResource">
 
-            <article class="intro__content">
+            <div class="intro__content">
                 <h2 class="intro__title"><?= get_field('intro_title') ?></h2>
-                <div class="intro__text"><?= wp_kses_post(get_field('sub_desc_intro')) ?></div>
-            </article>
+                <div class="intro__text" itemprop="educationalUse"><?= wp_kses_post(get_field('sub_desc_intro')) ?></div>
+            </div>
 
             <?php if ($image): ?>
                 <?= wp_get_attachment_image($image['id'], 'square-medium', false, [
@@ -28,13 +28,13 @@ $image = get_field('img_intro');
     </div>
 
 
-    <section class="aiTools">
-        <h2 class="aiTools__title" data-showup="true"><?= esc_html(get_field('first_title')) ?></h2>
+    <section class="aiTools" itemscope itemtype="https://schema.org/LearningResource">
+        <h2 class="aiTools__title" data-showup="true" itemprop="teaches"><?= esc_html(get_field('first_title')) ?></h2>
 
         <div class="aiTools__wrapper">
             <article class="aiTools__container aiTools__container--help" data-showup="true">
                 <?php if (have_rows('help_ai')): ?>
-                    <h3 class="aiTools__sub-title"><?= get_field('sub_title_hepl_enseignement') ?></h3>
+                    <h3 class="aiTools__sub-title" itemprop="learningResourceType"><?= get_field('sub_title_hepl_enseignement') ?></h3>
                     <ul class="aiTools__list">
                         <?php while (have_rows('help_ai')): the_row();
                             $link = get_sub_field('link_ressource_two');
@@ -53,9 +53,9 @@ $image = get_field('img_intro');
             </article>
 
 
-            <article class="aiTools__container aiTools__container--didact" data-showup="true">
+            <article class="aiTools__container aiTools__container--didact" data-showup="true" >
                 <?php if (have_rows('didact_ai')): ?>
-                    <h3 class="aiTools__sub-title"><?= get_field('sub_title_tools') ?></h3>
+                    <h3 class="aiTools__sub-title" itemprop="learningResourceType"><?= get_field('sub_title_tools') ?></h3>
                     <ul class="aiTools__list">
                         <?php while (have_rows('didact_ai')): the_row();
                             $link = get_sub_field('link_ressource_tools');
@@ -76,7 +76,7 @@ $image = get_field('img_intro');
 
             <article class="aiTools__container aiTools__container--detect" data-showup="true">
                 <?php if (have_rows('text_ai')): ?>
-                    <h3 class="aiTools__sub-title"><?= get_field('sub_title_detect') ?></h3>
+                    <h3 class="aiTools__sub-title" itemprop="learningResourceType"><?= get_field('sub_title_detect') ?></h3>
                     <ul class="aiTools__list">
                         <?php while (have_rows('text_ai')): the_row();
                             $link = get_sub_field('link_ressource_detect');
@@ -97,14 +97,14 @@ $image = get_field('img_intro');
 
     </section>
 
-    <section class="presentation">
-        <h2 class="presentation__title" data-showup="true"><?= esc_html(get_field('second_title')) ?></h2>
+    <section class="presentation" itemscope itemtype="https://schema.org/LearningResource">
+        <h2 class="presentation__title" data-showup="true" itemprop="teaches"><?= esc_html(get_field('second_title')) ?></h2>
 
         <div class="presentation__wrapper presentation__wrapper--pres ">
 
             <article class="presentation__container presentation__container--create" data-showup="true">
                 <?php if (have_rows('pc_ressources')): ?>
-                    <h3 class="presentation__sub-title"><?= get_field('sub_title_pc') ?></h3>
+                    <h3 class="presentation__sub-title" itemprop="learningResourceType"><?= get_field('sub_title_pc') ?></h3>
                     <ul class="presentation__list">
                         <?php while (have_rows('pc_ressources')): the_row();
                             $link = get_sub_field('link_ressource_pc');
@@ -125,7 +125,7 @@ $image = get_field('img_intro');
 
             <article class="presentation__container presentation__container--mind" data-showup="true">
                 <?php if (have_rows('mind_ressources')): ?>
-                    <h3 class="presentation__sub-title"><?= get_field('mind_title') ?></h3>
+                    <h3 class="presentation__sub-title" itemprop="learningResourceType"><?= get_field('mind_title') ?></h3>
                     <ul class="presentation__list">
                         <?php while (have_rows('mind_ressources')): the_row();
                             $link = get_sub_field('link_ressource_mind');
@@ -146,14 +146,14 @@ $image = get_field('img_intro');
     </section>
 
 
-    <section class="useful">
-        <h2 class="useful__title" data-showup="true"><?= esc_html(get_field('third_title')) ?></h2>
+    <section class="useful" itemscope itemtype="https://schema.org/LearningResource">
+        <h2 class="useful__title" data-showup="true" itemprop="teaches"><?= esc_html(get_field('third_title')) ?></h2>
 
         <div class="useful__wrapper useful__wrapper--use ">
 
             <article class="useful__container useful__container--math">
                 <?php if (have_rows('mh_ressources')): ?>
-                    <h3 class="useful__sub-title" data-showup="true"><?= get_field('sub_title_math') ?></h3>
+                    <h3 class="useful__sub-title" data-showup="true" itemprop="learningResourceType"><?= get_field('sub_title_math') ?></h3>
                     <ul class="useful__list">
                         <?php while (have_rows('mh_ressources')): the_row();
                             $link = get_sub_field('link_ressource_math');
@@ -174,7 +174,7 @@ $image = get_field('img_intro');
 
             <article class="useful__container useful__container--fr">
                 <?php if (have_rows('fr_ressources')): ?>
-                    <h3 class="useful__sub-title" data-showup="true"><?= get_field('sub_title_fr') ?></h3>
+                    <h3 class="useful__sub-title" data-showup="true" itemprop="learningResourceType"><?= get_field('sub_title_fr') ?></h3>
                     <ul class="useful__list">
                         <?php while (have_rows('fr_ressources')): the_row();
                             $link = get_sub_field('link_ressource_fr');

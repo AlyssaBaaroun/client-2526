@@ -7,24 +7,24 @@ $image = get_field('par_image');
 
 ?>
     <div class="backGroundPinkStageSchool">
+        <section class="referent" data-showup="true" itemscope itemtype="https://schema.org/ContactPoint">
 
-        <section class="referent" data-showup="true">
-
-            <article class="referent__intro mySchool__intro">
-
-                <h2 class="referent__title"><?= get_field('referent_title') ?></h2>
+            <div class="referent__intro mySchool__intro">
+                <h2 itemprop="contactType" class="referent__title"><?= get_field('referent_title') ?></h2>
                 <div class="referent__text"><?= wp_kses_post(get_field('referent_intro')) ?></div>
-            </article>
+            </div>
             <?php if (\wtl\Authentication::has_school_access()):
                 \wtl\Helpers::setup_school_post_context(); ?>
-                <article class="referent__ref mySchool__ref">
+                <div class="referent__ref mySchool__ref">
                     <h3 class="referent__referent-title  mySchool__referent-title"><?= \wtl\Helpers::get_field('mon_ref') ?></h3>
-                    <p class="referent__referent-name mySchool__referent-name"><?= \wtl\Helpers::get_field('referent_prenom') ?></p>
+                    <p class="referent__referent-name mySchool__referent-name"
+                       itemprop="name"><?= \wtl\Helpers::get_field('referent_prenom') ?></p>
                     <a class="referent__referent-contact  mySchool__referent-contact"
                        title="vers le mail de :<?= \wtl\Helpers::get_field('referent_email') ?>"
-                       href="mailto:<?= \wtl\Helpers::get_field('referent_email') ?>"><?= \wtl\Helpers::get_field('referent_email') ?>
+                       href="mailto:<?= \wtl\Helpers::get_field('referent_email') ?>"
+                       itemprop="email"><?= \wtl\Helpers::get_field('referent_email') ?>
                     </a>
-                </article>
+                </div>
                 <?php \wtl\Helpers::reset_post_context(); ?>
             <?php endif; ?>
         </section>
@@ -33,41 +33,39 @@ $image = get_field('par_image');
     <section class="fonctionnement">
         <h2 class="fonctionnement__title" data-showup="true"><?= esc_html(get_field('fonct_title')) ?></h2>
         <?php if (have_rows('etapes')): ?>
-            <ol class="fonctionnement__container" data-showup="true">
+            <ul class="fonctionnement__container" data-showup="true" itemscope itemtype="https://schema.org/ItemList">
                 <?php while (have_rows('etapes')) : the_row(); ?>
-                    <li class="fonctionnement__text"
+                    <li class="fonctionnement__text" itemprop="itemListElement"
                     ><?= esc_html(get_sub_field('etapes_repeteur')) ?></li>
                 <?php endwhile; ?>
-            </ol>
+            </ul>
         <?php endif; ?>
     </section>
-
 
     <section class="team">
         <h2 class="team__title" data-showup="true"><?= esc_html(get_field('team_title')) ?></h2>
         <?php if (have_rows('equipes_cards')): ?>
-            <article class="team__container" data-showup="true">
+            <div class="team__container" data-showup="true">
                 <?php while (have_rows('equipes_cards')) : the_row(); ?>
                     <div class="team__text"
                          data-showup="true"><?= wp_kses_post(get_sub_field('card_content')) ?></div>
                 <?php endwhile; ?>
-            </article>
+            </div>
         <?php endif; ?>
     </section>
 
 
-    <section class="timeline">
+    <section class="timeline" itemscope itemtype="https://schema.org/ItemList">
         <h2 class="timeline__title" data-showup="true"><?= esc_html(get_field('itin_title')) ?></h2>
         <?php if (have_rows('etapes_timeline')): ?>
             <div class="timeline__content">
                 <?php while (have_rows('etapes_timeline')) : the_row(); ?>
-                    <article class="timeline__item" data-showup="true">
-                        <h3 class="sro"></h3>
+                    <div class="timeline__item" data-showup="true" itemprop="itemListElement">
                         <dl class="timeline__text">
                             <dt><?= get_sub_field('step_timeline') ?></dt>
                             <dd><?= get_sub_field('step_desc') ?></dd>
                         </dl>
-                    </article>
+                    </div>
                 <?php endwhile; ?>
             </div>
         <?php endif; ?>
@@ -96,7 +94,7 @@ $image = get_field('par_image');
     </div>
 
 
-    <section class="par">
+    <section class="par" itemscope itemtype="https://schema.org/HowTo">
         <h2 class="par__title" data-showup="true"><?= esc_html(get_field('par_title')) ?></h2>
 
         <div class="par__wrapper">
@@ -106,7 +104,7 @@ $image = get_field('par_image');
                     <?php if (have_rows('par_etapes')): ?>
 
                         <h3 class="par__sub-title"><?= esc_html(get_field('par_procedure_title')) ?></h3>
-                        <ul class="par__content">
+                        <ul class="par__content" itemprop="step">
                             <?php while (have_rows('par_etapes')) : the_row(); ?>
 
                                 <li class="par__text">
@@ -126,8 +124,6 @@ $image = get_field('par_image');
                     'loading' => 'lazy',
             ]); ?>
         </div>
-
-
     </section>
 
 
