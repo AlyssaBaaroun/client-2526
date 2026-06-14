@@ -143,12 +143,19 @@
     bottom: -1rem;
     width: 100%;
 
+    @include between($tablet, $desktop) {
+      height: 9rem;
+      bottom: -2rem;
+    }
+
     @include min($desktop) {
       background-image: url("/wp-content/themes/client/assets/icons/backgroundPinkDesktop.svg");
       height: 24rem;
       z-index: -1;
-      bottom: -2rem;
+      bottom: -7rem;
     }
+
+
   }
 
   &::before {
@@ -167,8 +174,11 @@
       background-image: url("/wp-content/themes/client/assets/icons/backgroundPinkDesktop.svg");
       height: 19rem;
       z-index: -1;
-      top: -6rem;
+      top: -8rem;
     }
 
+    @include between($tablet, $desktop) {
+      height: 11rem;
+    }
   }
 }
