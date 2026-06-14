@@ -50,10 +50,10 @@ $image = get_field('rep_image', $page_id);
 ?>
     <div class="backGroundPinkStageSchool">
         <section class="sensibilisation">
-            <article class="sensibilisation__content">
+            <div class="sensibilisation__content">
                 <h2 class="sensibilisation__title"><?= get_field('title_sensi', $page_id) ?></h2>
                 <div class="sensibilisation__desc"><?= wp_kses_post(get_field('desc_sensi', $page_id)) ?></div>
-            </article>
+            </div>
 
 
             <?php if ($image): ?>
@@ -91,7 +91,7 @@ $image = get_field('rep_image', $page_id);
                     </article>
                 <?php endforeach; ?>
             <?php else : ?>
-                <p>Aucune sensibilisation</p>
+                <p class="suivies__none">Aucune sensibilisation</p>
             <?php endif; ?>
         </div>
     </section>
@@ -112,12 +112,17 @@ $image = get_field('rep_image', $page_id);
                     </article>
                 <?php endforeach; ?>
             <?php else : ?>
-                <p>Aucune sensibilisation</p>
+                <p class="nonSuivies__none">Aucune sensibilisation</p>
             <?php endif; ?>
         </div>
     </section>
 
+<?php if (empty($sensibilisations) && empty($non_suivies)) : ?>
+    <p class="noOtherOne__none">Aucune autre sensibilisation disponible.</p>
+<?php endif; ?>
+
     <section class="more   mySchool__warning">
+        <h2 class="sro">Organiser une séance de sensibilisation</h2>
         <div class=" more__warning-text   mySchool__warning-text"><?= wp_kses_post(get_field('expl_text', $page_id)) ?></div>
     </section>
 
