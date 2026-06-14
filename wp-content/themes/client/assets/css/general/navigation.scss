@@ -146,9 +146,7 @@ body {
       left: 0;
       background-color: var(--elemnt-title-color);
       transition: transform 0.25s ease-out;
-
     }
-
 
     &:hover::after,
     &:focus-visible {
@@ -231,7 +229,5 @@ body {
       }
     }
   }
-
-
 }
 
