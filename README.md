@@ -95,7 +95,7 @@ The website aims to:
 
 Made by Alyssa Baaroun © 2026
 
-# Sources & Ressources — Portfolio
+# Sources & Ressources — PLAI
 
 ---
 
