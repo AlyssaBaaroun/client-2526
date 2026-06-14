@@ -1,0 +1,53 @@
+@use "../general/variables" as *;
+
+
+.error {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  padding: 1.5rem;
+
+
+  @include min($tablet) {
+    padding: 6.563rem;
+  }
+
+  &__title {
+    font-family: var(--font-title);
+    font-size: 3.125rem;
+    color: var(--elemnt-title-color);
+
+    @include min($tablet) {
+      font-size: 6.25rem;
+    }
+  }
+
+  &__text {
+    font-family: var(--font-text);
+    color: var(--text-color);
+
+    @include min($tablet) {
+      font-size: 1.25rem;
+    }
+  }
+
+  &__btn-acc {
+    color: var(--elemnt-title-color);
+    font-family: var(--font-text);
+    font-weight: bold;
+    font-size: 1.25rem;
+    padding: 1rem 1.313rem;
+    border: var(--elemnt-title-color) 0.3em solid;
+    border-radius: 11px;
+    transition: all 0.6s ease;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+
+    &:hover {
+      background-color: var(--elemnt-title-color);
+      color: var(--background-color);
+    }
+  }
+}
