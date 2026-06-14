@@ -37,7 +37,7 @@ Le site a pour but de :
 | Outil | Usage |
 |-------|-------|
 | Figma | Design UI & identité visuelle |
-| Miro | Recherche UX & parcours utilisateur |
+| Miro | Recherche UX & parcours utilisateur, mon ux : (https://miro.com/app/board/uXjVG0LRN68=/?share_link_id=273163801453) |
 | Prototypes papier | Maquettes basse fidélité |
 
 ---
@@ -88,7 +88,7 @@ The website aims to:
 | Tool | Usage |
 |------|-------|
 | Figma | UI design & visual identity |
-| Miro | UX research & user flows |
+| Miro | UX research & user flows, my UX work : (https://miro.com/app/board/uXjVG0LRN68=/?share_link_id=273163801453) |
 | Paper prototypes | Low-fidelity wireframes |
 
 ---
