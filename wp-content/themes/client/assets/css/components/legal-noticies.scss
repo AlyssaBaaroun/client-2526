@@ -15,15 +15,17 @@
     gap: 4rem;
   }
 
-
   &__title {
     font-family: var(--font-title);
-    font-size: 2rem;
+    font-size: 1.25rem;
     display: block;
     color: var(--title-color);
     line-height: 2.813rem;
     text-transform: uppercase;
 
+    @include min($desktop) {
+      font-size: 2rem;
+    }
   }
 
   &__sub-title {
@@ -31,9 +33,7 @@
     font-size: 1.25rem;
     display: block;
     color: var(--elemnt-title-color);
-    padding-bottom: 20px;
-
-
+    padding-bottom: 1.25rem;
   }
   &__text, &__link {
     font-family: var(--font-text);
@@ -47,4 +47,3 @@
     color: var(--elemnt-title-color);
   }
 }
-

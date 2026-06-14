@@ -1,6 +1,5 @@
 @use "../general/variables" as *;
 
-
 .sensibilisation, .suivies, .nonSuivies {
   display: flex;
   flex-direction: column;
@@ -12,17 +11,15 @@
     padding: 2.5rem 6.563rem;
   }
 
-
-
   &__title {
     font-family: var(--font-title);
     color: var(--font-text-ev);
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     line-height: 1.875rem;
     text-transform: uppercase;
 
     @include min($desktop) {
-      font-size: 2.5rem;
+      font-size: 2rem;
       line-height: 2rem;
     }
   }
@@ -60,7 +57,7 @@
   flex-direction: column;
   gap: 1rem;
   background-color: var(--background-color);
-  padding: 25px;
+  padding: 1.563rem;
   border: solid var(--cards-sensi);
   border-radius: 10px;
 
@@ -71,13 +68,13 @@
     rotate: 4deg;
     border-radius: 10px;
     z-index: -1;
-    inset: 0; // meme taille que ma section
+    inset: 0;
   }
 
   &--off {
     position: relative;
     background-color: var(--background-color);
-    padding: 25px;
+    padding: 1.563rem;
     border: solid var(--off-card);
     opacity: 0.5;
     cursor: not-allowed;
@@ -108,8 +105,6 @@
       font-size: 1.5rem;
       line-height: 1.875rem;
     }
-
-
   }
 
   &__cardsLink {
@@ -146,9 +141,7 @@
       font-family: var(--font-text);
       color: var(--off-card-text);
       cursor: not-allowed;
-
     }
-
   }
 
   &__badge {
@@ -160,15 +153,19 @@
     align-self: flex-end;
     border-radius: 5px;
   }
-
 }
 
 .sensibilisation {
   @include min($desktop) {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-column-gap: 100px;
+    grid-column-gap: 6.25rem;
+  }
 
+  &__content{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 
   &__image {
@@ -192,6 +189,23 @@
 
     @include min($desktop) {
       grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+.suivies{
+  &__none{
+    font-family: var(--font-text-ev);
+    @include min($tablet) {
+      font-size: 1.5rem;
+    }
+  }
+}
+.nonSuivies{
+  &__none{
+    font-family: var(--font-text-ev);
+    @include min($tablet) {
+      font-size: 1.5rem;
     }
   }
 }

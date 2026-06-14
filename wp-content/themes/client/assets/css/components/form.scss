@@ -2,7 +2,6 @@
 
 
 .login-panel {
-
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -28,10 +27,13 @@
   &__title {
     font-family: var(--font-title), serif;
     color: var(--font-text-ev);
-    font-size: 2rem;
+    font-size: 1.25rem;
     line-height: 1.875rem;
     text-transform: uppercase;
 
+    @include min($desktop) {
+      font-size: 2rem;
+    }
   }
 
   &__intro {
@@ -45,9 +47,9 @@
     flex-direction: column;
     gap: 1rem;
     background-color: var(--background-color);
-    border-radius: 10px;
+    border-radius: 0.625rem;
     border: var(--elemnt-title-color) solid 3px;
-    padding: 40px 30px;
+    padding: 2.5rem 1.875rem;
     margin: 1.438rem;
 
 
@@ -74,8 +76,8 @@
   }
 
   &__input {
-    padding: 15px;
-    border-radius: 5px;
+    padding: 0.938rem;
+    border-radius: 0.313rem;
     border: var(--elemnt-title-color) solid 2px;
   }
 
@@ -86,8 +88,8 @@
 
   &__button {
     font-family: var(--font-text-ev);
-    padding: 20px;
-    border-radius: 5px;
+    padding: 1.25rem;
+    border-radius: 0.313rem;
     background-color: var(--elemnt-title-color);
     color: var(--background-color);
     width: 100%;
@@ -101,8 +103,6 @@
     border: none;
     transition: all 0.6s ease;
 
-
-
     &::after {
       content: "";
       background-image: url("/wp-content/themes/client/assets/icons/fleche_btn.svg");
@@ -113,7 +113,6 @@
       width: 1rem;
       height: 1rem;
       display: inline-block;
-
     }
 
     &:hover::after {

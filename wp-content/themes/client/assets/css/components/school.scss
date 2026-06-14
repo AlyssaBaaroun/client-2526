@@ -10,7 +10,7 @@
   @include min($desktop) {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-column-gap: 100px;
+    grid-column-gap: 6.25rem;
   }
   @include min($tablet) {
     padding: 2.5rem 6.563rem;
@@ -19,12 +19,12 @@
   &__title {
     font-family: var(--font-title), serif;
     color: var(--font-text-ev);
-    font-size: 2rem;
+    font-size: 1.25rem;
     line-height: 1.875rem;
     text-transform: uppercase;
 
     @include min($desktop) {
-      font-size: 2.5rem;
+      font-size: 2rem;
       line-height: 3rem;
     }
 
@@ -43,21 +43,29 @@
 
   &__ref {
     background-color: var(--background-color);
-    padding: 2.875rem;
+    padding: 1.5rem;
     border: var(--elemnt-title-color) solid 2px;
     margin: 1.5rem;
     position: relative;
     border-radius: 10px;
     text-align: center;
 
+    @include min($tablet) {
+      margin: 1.5rem 0 0;
+    }
+
+    @include min($desktop) {
+      padding: 2.875rem;
+    }
+
     &::before {
       content: "";
       position: absolute;
       background-color: var(--elemnt-title-color);
       rotate: 4deg;
-      border-radius: 10px;
+      border-radius: 0.625rem;
       z-index: -1;
-      inset: 0; // meme taille que ma section
+      inset: 0;
     }
   }
 
@@ -73,7 +81,6 @@
       font-size: 2.5rem;
       line-height: 3rem;
     }
-
   }
 
   &__referent-name {
@@ -83,7 +90,7 @@
 
   }
 
-  &__referent-name, &__referent-contact{
+  &__referent-name, &__referent-contact {
     @include min($desktop) {
       font-size: 1.25rem;
       line-height: 3rem;
@@ -94,11 +101,14 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    padding:  1.5rem;
+    padding: 1.5rem;
+
+    @include min($tablet) {
+      padding: 2.5rem 6.563rem;
+    }
 
     @include min($desktop) {
-      padding: 3.125rem 6.563rem;
-      margin-top: 50px;
+      margin-top: 3.125rem;
     }
   }
 
@@ -121,8 +131,6 @@
       font-weight: 600;
       color: var(--elemnt-title-color);
     }
-
-
   }
 
 }

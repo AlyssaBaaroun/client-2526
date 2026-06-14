@@ -14,18 +14,17 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 100px;
-    padding: 6.563rem;
   }
 
   &__Seconde {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
     @include min($desktop) {
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
-      padding-top: 50px;
+      gap: 1rem;
+      padding-top: 3.125rem;
     }
   }
 
@@ -35,24 +34,23 @@
     height: auto;
     object-fit: cover;
     border-radius: 1.875rem;
-    // padding-bottom: 20px;
   }
 
   &__text-container {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
   }
 
   &__title {
     font-family: var(--font-title), serif;
     color: var(--font-text-ev);
-    font-size: 2rem;
+    font-size: 1.5rem;
     line-height: 1.875rem;
     text-transform: uppercase;
 
     @include min($desktop) {
-      font-size: 2.5rem;
+      font-size: 2rem;
       line-height: 3rem;
     }
 
@@ -75,7 +73,7 @@
     font-family: var(--font-text-ev);
     font-size: 0.875rem;
     padding: 1rem 1.313rem;
-    border-radius: 11px;
+    border-radius: 0.625rem;
     transition: all 0.6s ease;
     text-decoration: none;
     text-transform: uppercase;
@@ -108,7 +106,7 @@
 }
 
 .whoWeAre {
-  padding: 1.5rem;
+  padding: 1rem;
 
   @include min($tablet) {
     padding: 2.5rem 6.563rem;
@@ -117,7 +115,7 @@
   &__left, &__right {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
     justify-content: center;
   }
 
@@ -125,27 +123,25 @@
   &__content {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
 
     @include min($desktop) {
       display: grid;
       grid-template-columns: repeat(2, 2fr);
-      grid-column-gap: 100px;
+      grid-column-gap: 6.25rem;
     }
   }
 
   &__title {
     font-family: var(--font-title);
     color: var(--font-text-ev);
-    font-size: 2rem;
+    font-size: 1.5rem;
     line-height: 1.875rem;
-    padding-bottom: 10px;
     text-transform: uppercase;
 
     @include min($desktop) {
       font-size: 2rem;
     }
-
   }
 
   &__sub-text {
@@ -154,7 +150,6 @@
     line-height: 1.5rem;
     @include min($tablet) {
       line-height: 1.875rem;
-
       font-size: 1.25rem;
     }
   }
@@ -168,12 +163,12 @@
     @include between($tablet, $desktop) {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 80px;
+      gap: 5rem;
     }
     @include min($desktop) {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      gap: 1.25rem;
     }
   }
 
@@ -187,17 +182,15 @@
     color: var(--text-color);
     @include min($tablet) {
       line-height: 1.875rem;
-
       font-size: 1.25rem;
     }
   }
-
 }
 
 .missions {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
   padding: 1.5rem;
 
   @include min($tablet) {
@@ -208,9 +201,8 @@
   &__title {
     font-family: var(--font-title);
     color: var(--font-text-ev);
-    font-size: 2rem;
+    font-size: 1.5rem;
     line-height: 1.875rem;
-    padding-bottom: 20px;
     text-transform: uppercase;
 
     @include min($desktop) {
@@ -224,9 +216,9 @@
     font-family: var(--font-text);
     color: var(--text-color);
     line-height: 1.5rem;
+
     @include min($tablet) {
       font-size: 1.25rem;
-
     }
   }
 
@@ -234,8 +226,8 @@
     border: var(--elemnt-title-color) solid 3px;
     border-radius: 10px;
     padding: 4rem 1.5rem;
-    max-width: 320px;
-    margin: 30px 0;
+    max-width: 20rem;
+    margin: 1.875rem 0;
 
 
     @include between($tablet, $desktop) {
@@ -253,21 +245,20 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: 1fr;
-      gap: 80px;
+      gap: 5rem;
     }
 
   }
 
   &__item-title {
-    line-height: 26px;
+    line-height: 1.625rem;
     display: block;
     font-family: var(--font-title);
     color: var(--font-text-ev);
     font-size: 1.25rem;
-    padding-bottom: 15px;
+    padding-bottom: 0.938rem;
 
     @include min($desktop) {
-
       font-size: 1.5rem;
     }
   }
@@ -278,21 +269,19 @@
     line-height: 1.313rem;
 
     p:not(:last-child) {
-      padding-bottom: 15px;
+      padding-bottom: 0.938rem;
     }
 
     @include min($tablet) {
       font-size: 1.25rem;
     }
   }
-
-
 }
 
 .contactFp {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
   padding: 1.5rem;
 
   @include between($tablet, $desktop) {
@@ -321,29 +310,27 @@
   &__contenair {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
   }
 
   &__title {
     font-family: var(--font-title);
     color: var(--font-text-ev);
-    font-size: 2rem;
+    font-size: 1.5rem;
     line-height: 1.875rem;
-    padding-bottom: 10px;
+    padding-bottom: 0.625rem;
     text-transform: uppercase;
 
     @include min($desktop) {
       padding-bottom: unset;
       font-size: 2rem;
     }
-
   }
 
   &__text {
     font-family: var(--font-text);
     color: var(--text-color);
     line-height: 1.5rem;
-    padding-bottom: 20px;
 
     @include min($tablet) {
       line-height: 1.875rem;
