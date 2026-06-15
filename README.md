@@ -36,7 +36,7 @@ Le site a pour but de :
 
 | Outil | Usage |
 |-------|-------|
-| Figma | Design UI & identité visuelle |
+| Figma | Design UI & identité visuelle (https://www.figma.com/design/rARl8HSEYfWuSZrk3hg6tA/PLAI?node-id=500-2354&t=ARNBGUB35yvmaoqS-1)|
 | Miro | Recherche UX & parcours utilisateur, mon ux : (https://miro.com/app/board/uXjVG0LRN68=/?share_link_id=273163801453) |
 | Prototypes papier | Maquettes basse fidélité |
 
